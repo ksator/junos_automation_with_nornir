@@ -17,6 +17,8 @@ leaf:
 
 juniper: 
   platform: junos
+  data: 
+    version: 18.2R1.9
 
 common_settings: 
   data: 
