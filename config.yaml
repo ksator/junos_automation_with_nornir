@@ -1,7 +1,7 @@
 ---
 core:
 # Number of Nornir worker threads that are run at the same time - default is 20
-    num_workers: 100
+    num_workers: 30
 
 inventory:
     plugin: nornir.plugins.inventory.simple.SimpleInventory
