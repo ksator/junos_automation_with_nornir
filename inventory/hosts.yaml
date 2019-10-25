@@ -199,7 +199,7 @@ vMX6:
        local_ip: 192.168.3.5
 
 vMX7:
-  hostname: 100.123.1.5
+  hostname: 100.123.1.6
   port: 830
   groups:
     - juniper 
