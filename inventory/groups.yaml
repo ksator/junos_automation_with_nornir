@@ -1,0 +1,28 @@
+---
+# groups.yaml file
+
+network_device: {}
+
+spine: 
+  groups: 
+    - network_device
+  data: 
+    role: spine
+
+leaf: 
+  groups: 
+    - network_device
+  data: 
+    role: leaf
+
+juniper: 
+  platform: junos
+
+common_settings: 
+  data: 
+    snmp_community: public 
+    grpc_port: 32768
+    name_servers:
+      - 8.8.8.8
+      - 8.8.8.4
+

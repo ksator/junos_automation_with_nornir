@@ -1,0 +1,64 @@
+interfaces {
+{% for neighbor in host.neighbors %}
+    replace:
+    {{ neighbor.interface }} {
+        description "{{ neighbor.interface_description }}";
+        unit 0 {
+            family inet {
+                address {{ neighbor.local_ip }}/31;
+            }
+        }
+    }
+{% endfor %}
+}
+protocols {
+    replace:
+    bgp {
+        group underlay {
+            import bgp-in;
+            export bgp-out;
+            type external;
+            local-as {{ host.local_asn }};
+            multipath multiple-as;
+{% for neighbor in host.neighbors %}
+            neighbor {{ neighbor.peer_ip }} {
+                peer-as {{ neighbor.asn }};
+            }
+{% endfor %}
+        }
+    }
+}
+replace:
+policy-options {
+    policy-statement bgp-in {
+        then accept;
+    }
+    policy-statement bgp-out {
+        then accept;
+    }
+}
+replace:
+snmp {
+    community {{ host.snmp_community }};
+}
+system {
+    services {
+        extension-service {
+            request-response {
+                grpc {
+                    clear-text {
+                        port {{ host.grpc_port }};
+                    }
+                    skip-authentication;
+                }
+            }
+            notification {
+                allow-clients {
+                address 0.0.0.0/0;
+                }
+            }
+        }
+    }
+}
+
+
