@@ -1,3 +1,5 @@
+# This Nornir script executes several tasks against the ubuntu hosts
+
 from nornir import InitNornir
 from nornir.plugins.tasks import commands
 from nornir.plugins.functions.text import print_result
