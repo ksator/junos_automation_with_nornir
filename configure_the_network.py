@@ -1,5 +1,5 @@
 
-# generate config files and load config files on network devices 
+# generates config files and loads config files on network devices 
 
 from nornir import InitNornir
 from nornir.plugins.tasks import networking, text
