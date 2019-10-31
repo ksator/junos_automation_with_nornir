@@ -1,0 +1,32 @@
+dist: xenial
+
+language: python
+
+python:
+  - 3.6
+  - 3.7
+
+install:
+  - pip install -r requirements.txt
+
+script:
+  - yamllint inventory/*
+  - yamllint .
+  - python -m py_compile configuration_dry_run.py
+  - python -m py_compile configure_the_network.py
+  - python -m py_compile execute_tasks_against_ubuntu.py
+  - python -m py_compile getters.py
+  - python -m py_compile validate_bgp_sessions_state.py
+  - python -m py_compile validate_os_version.py
+
+
+branches:
+  only:
+   - master
+
+notifications:
+  email:
+    recipients:
+      - khelil.sator.git@gmail.com
+    on_failure: always
+    on_success: never 
