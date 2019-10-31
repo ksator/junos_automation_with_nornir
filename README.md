@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ksator/junos_automation_with_nornir.svg?branch=master)](https://travis-ci.org/ksator/junos_automation_with_nornir)  
+
 Nornir is a network automation framework written in Python.  
 To use Nornir, you write Python code.       
 This repo has Nornir content to automate Junos.  
