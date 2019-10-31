@@ -3,28 +3,27 @@
 
 network_device: {}
 
-spine: 
-  groups: 
+spine:
+  groups:
     - network_device
-  data: 
+  data:
     role: spine
 
-leaf: 
-  groups: 
+leaf:
+  groups:
     - network_device
-  data: 
+  data:
     role: leaf
 
-juniper: 
+juniper:
   platform: junos
-  data: 
+  data:
     version: 18.2R1.9
 
-common_settings: 
-  data: 
-    snmp_community: public 
+common_settings:
+  data:
+    snmp_community: public
     grpc_port: 32768
     name_servers:
       - 8.8.8.8
       - 8.8.8.4
-
