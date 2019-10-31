@@ -1,6 +1,6 @@
 ---
 core:
-   # Number of Nornir worker threads that are run at the same time - default is 20
+    # Nbr of Nornir worker threads that are run at the same time - default is 20
     num_workers: 30
 
 inventory:
