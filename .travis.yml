@@ -19,14 +19,13 @@ script:
   - python -m py_compile validate_bgp_sessions_state.py
   - python -m py_compile validate_os_version.py
 
-
 branches:
   only:
-   - master
+    - master
 
 notifications:
   email:
     recipients:
       - khelil.sator.git@gmail.com
     on_failure: always
-    on_success: never 
+    on_success: never
