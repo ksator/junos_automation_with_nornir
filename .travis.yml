@@ -10,7 +10,6 @@ install:
   - pip install -r requirements.txt
 
 script:
-  - yamllint inventory/*
   - yamllint .
   - python -m py_compile configuration_dry_run.py
   - python -m py_compile configure_the_network.py
