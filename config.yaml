@@ -1,6 +1,6 @@
 ---
 core:
-# Number of Nornir worker threads that are run at the same time - default is 20
+   # Number of Nornir worker threads that are run at the same time - default is 20
     num_workers: 30
 
 inventory:
@@ -10,7 +10,7 @@ inventory:
         group_file: "inventory/groups.yaml"
         defaults_file: "inventory/defaults.yaml"
 
-logging: 
+logging:
     enabled: True
     level: INFO
     file: "nornir.log"
